@@ -3,7 +3,7 @@
 ## Steps 
 ### 1. Prepare the rosdiscover-extract-cxx volume
 
-Rosdiscover uses a C++ program to extract information from the source code of your ROS nodes. This is kind of like an external dependency. It might seem like the rosdisover script is giving you correct output. But it will not be able to extract the correct information without this code. This program will be built inside a docker container and then the binaries will be made available trough a docker volume. 
+Rosdiscover uses a static analyzer program to extract information from the source code of your ROS nodes. It might seem like the rosdisover script is giving you correct output. But it will not be able to extract the correct information without this crucial part. This program will be built inside a docker container and then the binaries will be made available trough a docker volume. Then it will be mounted and run from inside the docker container of the robot solution. 
 
 #### 1.1 Build docker-llvm
 Build the [docker-llvm image](https://github.com/ChrisTimperley/docker-llvm) image. This will build the llvm compiler used to build `rosdicover-extract-cxx`. This might take a while. 
